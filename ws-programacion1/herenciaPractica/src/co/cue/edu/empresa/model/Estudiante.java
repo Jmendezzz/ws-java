@@ -1,8 +1,9 @@
 package co.cue.edu.empresa.model;
 
 public class Estudiante extends Persona{
-    int notas []= new int[3];
-    public Estudiante(String nombre, String cedula) {
+    private int puntajeIngreso;
+    public Estudiante(String nombre, String cedula,int puntajeIngreso) {
         super(nombre, cedula);
+        this.puntajeIngreso = puntajeIngreso;
     }
 }

@@ -10,7 +10,7 @@ public class Notas_curso {
         this.curso = curso;
     }
 
-    public void setArrayNotas(int[] arrayNotas) {
-        this.arrayNotas = arrayNotas;
+    public void setArrayNotas(int nota, int position) {
+        arrayNotas[position]=nota;
     }
 }
