@@ -1,4 +1,4 @@
-package co.edu.cue.jugueteria;
+package co.edu.cue.jugueteria.aplication;
 
 public class Main {
     public static void main(String[] args) {
