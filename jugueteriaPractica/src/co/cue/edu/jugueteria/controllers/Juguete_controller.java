@@ -7,28 +7,48 @@ import javax.swing.*;
 
 public class Juguete_controller {
     Juguete_impl juguete_impl = new Juguete_impl();
-    public  void toysType (Juguete[] toyInventory, int position){
-        juguete_impl.toysType(toyInventory,position);
+
+    public Juguete_impl service() {
+        return juguete_impl;
     }
-    public  void totalToys (Juguete[] toyInventory, int position){
-        juguete_impl.totalToys(toyInventory,position);
+
+    public void addToyInventory(){
+        String toyName = JOptionPane.showInputDialog("Ingrese el nombre del juguete");
+        int toyAmount =Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad del juguete " +toyName));
+        double toyPrice = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el precio del juguete "+ toyName));
+        int categoryOption = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la categoria del juguete \n"+
+                "1. Plastico \n"+
+                "2. Tela \n"+
+                "3. Electronico"));
+        juguete_impl.addToyInventory(toyName,toyAmount,categoryOption,toyPrice);
     }
-    public  void totalToysValue (Juguete[] toyInventory, int position){
-        juguete_impl.totalToysValue(toyInventory,position);
+    public  void toysType (){
+        juguete_impl.toysType();
     }
-    public void minMaxToysType (Juguete[] toyInventory, int position){
-        juguete_impl.minMaxToysType(toyInventory,position);
+    public  void totalToys (){
+        juguete_impl.totalToys();
     }
-    public void filterToys(Juguete[] toyInventory, int position){
+    public  void totalToysValue (){
+        juguete_impl.totalToysValue();
+    }
+    public void minMaxToysType (){
+        juguete_impl.minMaxToysType();
+    }
+    public void filterToys(){
         int priceRange =Integer.parseInt(JOptionPane.showInputDialog("Ingrese el precio para filtar los juguetes")) ;
-        juguete_impl.filterToys(toyInventory,position,priceRange);
+        juguete_impl.filterToys(priceRange);
     }
-    public void toyProperties(Juguete[] toyInventory, int position){
+    public void toyProperties(){
         String toyName = JOptionPane.showInputDialog("Ingrese el nombre del juguete que desea conocer las propiedades");
-        juguete_impl.toyProperties(toyInventory,position,toyName);
+        juguete_impl.toyProperties(toyName);
     }
-    public Juguete findAToy(Juguete[] toyInventory, int limite){
+    public Juguete findAToy(){
         String toyName = JOptionPane.showInputDialog("Ingrese el nombre del juguete que se vendió");
-        return juguete_impl.findAToy(toyInventory,limite,toyName);
+        return juguete_impl.findAToy(toyName);
+    }
+    public void increaseStock(){
+        String toyName = JOptionPane.showInputDialog("Ingrese el nombre del juguete");
+        int newAmount = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad que desea agregar"));
+        juguete_impl.increaseStock(toyName,newAmount);
     }
 }

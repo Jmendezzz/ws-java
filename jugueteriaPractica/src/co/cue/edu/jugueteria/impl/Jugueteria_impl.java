@@ -10,29 +10,9 @@ import javax.swing.*;
 
 public class Jugueteria_impl implements Jugueteria_services {
     @Override
-    public void increaseStock(String toyName, int newAmount, Juguete toyArray[], int limit) {
-        boolean band = false;
-        for (int i = 0; i< limit;i++){
-            if(toyName.equalsIgnoreCase(toyArray[i].toyName)){
-                toyArray[i].setToyAmount(newAmount+toyArray[i].getToyAmount());
-                band= true;
-            }
-        }
-        if (!band){
-            JOptionPane.showMessageDialog(null,"El juguete ingresado no se encontró, intente nuevamente.");
-        }else JOptionPane.showMessageDialog(null, "Unidades añadidas exitosamente!");
-    }
-
-    @Override
     public Cliente createClient(String userName, String id, String phoneNumber, String adress, String birthdayDate, String emailAdress) {
          return new Cliente(userName,id,phoneNumber,adress,birthdayDate,emailAdress);
     }
-
-    @Override
-    public Empleado createEmployee(String userName, String id, String phoneNumber, String adress, int salary, String laborDate) {
-        return new Empleado(userName,id,phoneNumber,adress,salary,laborDate);
-    }
-
     @Override
     public Juguete createToy(String toyName, int toyAmount, int optionCategory, double toyPrice) {
 

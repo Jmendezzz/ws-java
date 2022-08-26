@@ -1,8 +1,8 @@
 package co.cue.edu.jugueteria.model;
 
 public class Empleado extends Usuario {
-    int salary;
-    String laborDate;
+    private int salary;
+    private String laborDate;
     public Empleado(String userName, String id, String phoneNumber, String adress, int salary, String laborDate) {
         super(userName, id, phoneNumber, adress);
         this.salary = salary;
